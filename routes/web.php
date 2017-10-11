@@ -31,7 +31,7 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('create', function () {
         return view('admin.create');
     })->name('admin.create');
-    Route::post('create', function() {
+    Route::post('create', function(\Illuminate\Http\Request $request) {
         return "It works!";
     })->name('admin.create');
     Route::get('edit/{id}', function ($id) {
@@ -49,7 +49,7 @@ Route::group(['prefix' => 'admin'], function() {
 			}
         return view('admin.edit', ['post' => $post]);
     })->name('admin.edit');
-    Route::post('edit', function() {
+    Route::post('edit', function(\Illuminate\Http\Request $request) {
         return "It works!";
     })->name('admin.update');
 });

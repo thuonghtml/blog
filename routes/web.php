@@ -50,7 +50,9 @@ Route::group(['prefix' => 'admin'], function() {
         return view('admin.edit', ['post' => $post]);
     })->name('admin.edit');
     Route::post('edit', function(\Illuminate\Http\Request $request) {
-        return "It works!";
+        return redirect()
+        ->route('admin.index')
+        ->with('info','Post editted, new Title ' . $request->input('title'));
     })->name('admin.update');
 });
 /*

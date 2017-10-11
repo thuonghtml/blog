@@ -12,12 +12,15 @@ Route::get('about', function () {
 Route::get('admin/create', function () {
     return view('admin.create');
 })->name('admin.create');
+Route::post('admin.create',function(){
+	return "It work!";
+})->name('admin.create');
 Route::get('admin', function () {
     return view('admin.index');
 })->name('admin.index');
 Route::get('admin/edit/{id}', function () {
     return view('admin.edit');
 })->name('admin.edit');
-Route::get('admin/update', function () {
+Route::post('admin/update', function () {
     return view('admin.update');
 })->name('admin.update');

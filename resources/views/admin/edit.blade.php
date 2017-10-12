@@ -21,7 +21,7 @@
                         class="form-control" 
                         id="content" 
                         name="content"
-                        alue="{{$post->content}}">
+                        value="{{$post->content}}">
                 </div>
                 {{ csrf_field() }}
                 <input type="hidden" name="id" value="{{ $postId }}">

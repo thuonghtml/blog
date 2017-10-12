@@ -8,8 +8,7 @@ class PostController extends Controller
 {
     public function getIndex(Store $session)
     {
-    	$post = new Post();
-        $posts = $post->getPosts($session);
+    	$posts = Post::all();
         return view('blog.index', ['posts' => $posts]);
     }
     public function getAdminIndex(Store $session)

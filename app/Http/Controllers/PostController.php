@@ -20,13 +20,15 @@ class PostController extends Controller
     public function getPost( $id)
     {
         #$post = Post::find($id);
-        $post = Post::where('id', '=', $id)->first();
+        $post = Post::where('id', '=', $id)->with('likes')->first();
+        
         return view('blog.post', ['post' => $post]);
     }
     public function getLikePost( $id)
     {
         #$post = Post::find($id);
         $post = Post::where('id', '=', $id)->first();
+
         $like = new Like();
         $post->likes()->save($like);
         return redirect()->back();
